@@ -1,0 +1,174 @@
+/* result.css - 결과 페이지 / 제작: 김시영, 이민서 */
+
+/* 공통 섹션 설정 */
+.result-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+  border-bottom: 2px solid #CCCCCC;
+}
+
+.result-inner { 
+  text-align: center; 
+}
+
+/* 상단 팩폭 인트로 영역 */
+.result-intro {
+  background-color: #333333;
+  padding: 80px 0;
+  text-align: center;
+  color: #FFFFFF;
+  border-bottom: 5px solid #FF8C00;
+}
+.result-label { font-size: 1.2rem; color: #DDDDDD; margin-bottom: 10px; font-weight: bold; }
+.result-hours { font-size: 5rem; font-weight: bold; color: #FF8C00; margin-bottom: 20px; line-height: 1; }
+.result-sub   { font-size: 1.1rem; color: #CCCCCC; }
+
+/* 뱃지 및 제목 스타일 (공통) */
+.result-scale-badge { 
+  display: inline-block; 
+  padding: 8px 20px; 
+  border-radius: 5px; 
+  font-size: 1.1rem; 
+  font-weight: bold; 
+  background-color: #333333; 
+  color: #FFFFFF; 
+  margin-bottom: 20px; 
+}
+.result-scale-badge.accent { background-color: #D97706; }
+.result-scale-badge.green  { background-color: #2E8B57; }
+.result-scale-badge.purple { background-color: #7C3AED; }
+
+.result-scale-title { 
+  font-size: 4rem; 
+  font-weight: bold; 
+  color: #333333; 
+  margin-bottom: 20px; 
+}
+
+.result-fun-text { 
+  font-size: 1.2rem; 
+  line-height: 1.8; 
+  color: #555555; 
+  margin-bottom: 40px; 
+  max-width: 600px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  font-weight: bold;
+}
+.result-fun-text strong { color: #D9534F; font-size: 1.3rem; }
+.small-note { font-size: 0.9rem; color: #999999; }
+
+/* 1주일 (자전거) */
+.week-section { background-color: #F9F9F9; }
+.bike-track { 
+  position: relative; 
+  width: 100%; 
+  max-width: 500px; 
+  height: 60px; 
+  margin: 0 auto; 
+  background-color: #FFFFFF; 
+  border: 2px solid #999999; 
+  display: flex; 
+  align-items: center; 
+}
+.bike-icon  { 
+  position: absolute; 
+  left: 0; 
+  font-size: 2.5rem; 
+  transition: left 2s ease; 
+  z-index: 1; 
+}
+.bike-icon.riding { left: calc(100% - 40px); }
+.city-label { 
+  position: absolute; 
+  font-size: 0.9rem; 
+  font-weight: bold; 
+  color: #333333;
+}
+.city-label.start { left: 5px; top: -25px; }
+.city-label.end   { right: 5px; top: -25px; }
+
+/* 1달 (알바비) */
+.month-section { background-color: #FFFBEB; }
+.counter-amount { font-size: 2.5rem; color: #D97706 !important; }
+.coin-pile { font-size: 3rem; letter-spacing: 5px; }
+
+/* 1년 (책) */
+.year-section { background-color: #E8F5E9; }
+.books-canvas-wrapper { 
+  margin: 0 auto; 
+  max-width: 600px; 
+  background-color: #FFFFFF; 
+  border: 3px solid #2E8B57; /* 튼튼한 초록색 테두리 */
+}
+#booksCanvas { display: block; width: 100%; }
+
+/* 10년 (우주) */
+.decade-section { background-color: #222222; border-bottom: none; }
+.decade-section .result-scale-title { color: #FFFFFF; }
+.decade-section .result-fun-text    { color: #CCCCCC; }
+.decade-section .result-fun-text strong { color: #FF8C00; }
+.earth-moon { 
+  position: relative; 
+  width: 100%; 
+  max-width: 400px; 
+  height: 100px; 
+  margin: 0 auto; 
+  display: flex; 
+  align-items: center; 
+}
+.earth-icon { font-size: 4rem; flex-shrink: 0; }
+.orbit-line { 
+  flex: 1; 
+  height: 3px; 
+  background-color: #555555; 
+  border-top: 2px dashed #999999;
+}
+.moon-icon  { 
+  font-size: 3rem; 
+  flex-shrink: 0; 
+}
+
+/* CTA (마지막 버튼 영역) */
+.result-cta { 
+  background-color: #FF8C00; /* 확 튀는 주황색 배경 */
+  padding: 60px 20px; 
+  text-align: center; 
+  color: #FFFFFF; 
+}
+.result-cta h2 { font-size: 2.2rem; font-weight: bold; margin-bottom: 15px; color: #FFFFFF; }
+.result-cta p  { font-size: 1.2rem; margin-bottom: 30px; font-weight: bold; }
+.cta-buttons { 
+  display: flex; 
+  gap: 15px; 
+  justify-content: center; 
+  flex-wrap: wrap; 
+}
+.result-cta .btn-primary { 
+  background-color: #2E8B57; /* 초록색 버튼 */
+  border: 2px solid #2E8B57; 
+  color: #FFFFFF; 
+}
+.result-cta .btn-outline { 
+  background-color: transparent;
+  border: 2px solid #FFFFFF; 
+  color: #FFFFFF; 
+}
+.result-cta .btn-outline:hover { 
+  background-color: #FFFFFF; 
+  color: #FF8C00;
+}
+
+/* 반응형 모바일 사이즈 */
+@media (max-width: 640px) {
+  .result-hours       { font-size: 4rem; }
+  .result-scale-title { font-size: 3rem; }
+  .result-fun-text    { font-size: 1.1rem; }
+  .result-section     { min-height: auto; padding: 60px 20px; }
+  .cta-buttons        { flex-direction: column; align-items: center; }
+  .cta-buttons a      { width: 100%; max-width: 300px; }
+  .counter-amount     { font-size: 2rem !important; }
+}

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<!--
+  detox.html - 디지털 디톡스란? 페이지 (메뉴: 01 디톡스란?)
+  제작: 김시영, 이민서
+  구조: header > nav > main > section(중독실태) + section(정의) > footer
+  포함 요소: <img>, <ul>/<li>, <table>, 웹폰트, 포인트 컬러
+-->
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>디지털 디톡스 | 디톡스란?</title>
+  <!-- 파비콘 -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+  <!-- 웹 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=Black+Han+Sans&display=swap" rel="stylesheet" />
+  <!-- 공통 CSS + 페이지 CSS -->
+  <link rel="stylesheet" href="../css/common.css" />
+  <link rel="stylesheet" href="../css/detox.css" />
+</head>
+<body>
+
+  <!-- ===== 헤더 & 네비게이션 ===== -->
+  <header>
+    <nav class="navbar" aria-label="메인 네비게이션">
+      <div class="nav-container">
+        <!-- 로고: 클릭 시 main.html 이동 -->
+        <a href="main.html" class="nav-logo" aria-label="홈으로 이동">
+          <span class="logo-icon">🌿</span>
+          <span class="logo-text">디지털 디톡스</span>
+        </a>
+
+        <!-- 상단 메뉴 5개 -->
+        <ul class="nav-menu" id="navMenu">
+          <li class="nav-item">
+            <a href="main.html" class="nav-link">홈</a>
+          </li>
+          <!-- 현재 페이지: 디톡스란? (active) -->
+          <li class="nav-item has-dropdown">
+            <a href="detox.html" class="nav-link active">디톡스란?</a>
+            <ul class="dropdown-menu">
+              <li><a href="#addiction">스마트폰 중독 실태</a></li>
+              <li><a href="#definition">디지털 디톡스 정의</a></li>
+            </ul>
+          </li>
+          <li class="nav-item has-dropdown">
+            <a href="index.html" class="nav-link">스크린타임 계산기</a>
+            <ul class="dropdown-menu">
+              <li><a href="index.html">시간 입력하기</a></li>
+              <li><a href="result.html">결과 분석 보기</a></li>
+            </ul>
+          </li>
+          <li class="nav-item has-dropdown">
+            <a href="challenge.html" class="nav-link">디톡스 챌린지</a>
+            <ul class="dropdown-menu">
+              <li><a href="challenge.html#seven-day">7일 챌린지</a></li>
+              <li><a href="challenge.html#tips">실천 팁</a></li>
+            </ul>
+          </li>
+          <li class="nav-item has-dropdown">
+            <a href="challenge.html#stats" class="nav-link">정보 &amp; 문의</a>
+            <ul class="dropdown-menu">
+              <li><a href="challenge.html#stats">관련 통계</a></li>
+              <li><a href="challenge.html#contact">문의하기</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== 메인 콘텐츠 ===== -->
+  <main>
+
+    <!-- 페이지 히어로 배너 -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="badge">01 디톡스란?</span>
+        <h1 class="page-title">스마트폰, 우리는 얼마나 중독되어 있을까요?</h1>
+        <p class="page-desc">디지털 기기 과의존의 실태를 파악하고, 디지털 디톡스가 무엇인지 알아봅시다.</p>
+        <!-- 목차 내비게이션 -->
+        <nav class="toc" aria-label="이 페이지 목차">
+          <a href="#addiction" class="toc-link"> 스마트폰 중독 실태</a>
+          <a href="#definition" class="toc-link"> 디지털 디톡스 정의</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────
+         Section 1: 스마트폰 중독 실태
+         포함: <img>, <ul>/<li>
+         ───────────────────────────────────────── -->
+    <section class="addiction-section" id="addiction">
+      <div class="container">
+
+        <!-- 섹션 헤더 -->
+        <header class="section-header reveal">
+          <span class="badge badge-red"> Section 01</span>
+          <h2 class="section-title">스마트폰 중독 실태</h2>
+          <p class="section-subtitle">
+            현대인들이 하루 평균 4시간 이상 스마트폰을 사용하면서<br />
+            도파민 중독, 거북목 등 다양한 문제가 심각해지고 있습니다.
+          </p>
+        </header>
+
+        <!-- 이미지 + 문제 설명: grid 2열 -->
+        <div class="addiction-grid reveal">
+          <!-- 왼쪽: 이미지 영역 -->
+          <figure class="addiction-figure">
+            <img
+              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80"
+              alt="스마트폰을 오랫동안 사용하는 사람의 모습 - 목이 굽혀진 자세"
+              class="addiction-img"
+              loading="lazy"
+            />
+            <figcaption>
+              📸 하루 종일 스마트폰을 바라보는 현대인의 일상<br />
+              <small>출처: Unsplash (illustrative)</small>
+            </figcaption>
+          </figure>
+
+          <!-- 오른쪽: 문제점 목록 -->
+          <article class="addiction-text">
+            <h3>스마트폰 과의존이 부르는 문제들</h3>
+            <p>
+              스마트폰에서 쏟아지는 숏폼 콘텐츠와 SNS 알림은
+              뇌의 <strong>도파민 보상 회로</strong>를 끊임없이 자극합니다.
+              이는 점점 더 강한 자극을 원하게 만들며 집중력을 저하시킵니다.
+            </p>
+
+            <!-- 주요 증상 목록 (ul/li 필수 요소) -->
+            <ul class="symptom-list" aria-label="스마트폰 중독 주요 증상">
+              <li>
+                <span class="symptom-icon">🧠</span>
+                <div>
+                  <strong>도파민 중독</strong>
+                  <p>숏폼 영상과 SNS 좋아요에 반응하는 뇌가 점차 자극에 무감각해집니다.</p>
+                </div>
+              </li>
+              <li>
+                <span class="symptom-icon">📐</span>
+                <div>
+                  <strong>거북목 증후군</strong>
+                  <p>고개를 숙이는 자세를 반복하면 경추에 15~27kg의 하중이 가해집니다.</p>
+                </div>
+              </li>
+              <li>
+                <span class="symptom-icon">😴</span>
+                <div>
+                  <strong>수면 장애</strong>
+                  <p>청색광(블루라이트)이 멜라토닌 분비를 억제해 수면의 질을 저하시킵니다.</p>
+                </div>
+              </li>
+              <li>
+                <span class="symptom-icon">👁️</span>
+                <div>
+                  <strong>눈의 피로 & 시력 저하</strong>
+                  <p>작은 화면을 오래 응시하면 안구 건조증과 근시 진행이 빨라집니다.</p>
+                </div>
+              </li>
+              <li>
+                <span class="symptom-icon">🤝</span>
+                <div>
+                  <strong>사회적 고립</strong>
+                  <p>온라인 관계에 의존하면서 실제 대면 소통 능력이 약해집니다.</p>
+                </div>
+              </li>
+              <li>
+                <span class="symptom-icon">🎯</span>
+                <div>
+                  <strong>주의력 결핍</strong>
+                  <p>멀티태스킹과 끊임없는 알림으로 인해 한 가지에 집중하는 능력이 저하됩니다.</p>
+                </div>
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- 통계 하이라이트 -->
+        <div class="stat-highlight-row reveal">
+          <div class="stat-highlight">
+            <span class="sh-num">4.3<small>시간</small></span>
+            <p>한국인 일평균 스마트폰 사용 시간</p>
+          </div>
+          <div class="stat-highlight">
+            <span class="sh-num">85<small>회</small></span>
+            <p>하루 평균 스마트폰을 확인하는 횟수</p>
+          </div>
+          <div class="stat-highlight">
+            <span class="sh-num">30<small>분</small></span>
+            <p>아침에 일어나자마자 스마트폰 확인까지 걸리는 시간</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────
+         Section 2: 디지털 디톡스 정의
+         포함: 웹폰트 서식, 포인트 컬러, <table>
+         ───────────────────────────────────────── -->
+    <section class="definition-section" id="definition">
+      <div class="container">
+
+        <!-- 섹션 헤더 -->
+        <header class="section-header reveal">
+          <span class="badge badge-green">🌿 Section 02</span>
+          <h2 class="section-title">디지털 디톡스란?</h2>
+        </header>
+
+        <!-- 정의 카드 -->
+        <article class="definition-card reveal">
+          <blockquote class="definition-quote">
+            <p>
+              <em>디지털 디톡스(Digital Detox)</em>란, 스마트폰·컴퓨터·SNS 등
+              디지털 기기 사용을 의도적으로 줄이거나 잠시 멈추어
+              <strong>정신적·신체적 건강을 회복</strong>하는 실천을 말합니다.
+            </p>
+          </blockquote>
+          <p class="definition-body">
+            디톡스(Detox)는 원래 체내 독소를 제거하는 의학 용어입니다.
+            디지털 기기가 일상이 된 현대 사회에서, 과도한 스마트폰 사용으로 쌓인
+            <span class="point-text">정보 과부하·스트레스·집중력 저하</span>를
+            '디지털 독소'로 보고 이를 해독하는 개념입니다.
+          </p>
+          <p class="definition-body">
+            꼭 스마트폰을 완전히 끊을 필요는 없습니다.
+            하루 1시간 '스마트폰 없는 시간'을 만드는 것처럼
+            <span class="point-text green">작고 꾸준한 실천</span>이 핵심입니다.
+          </p>
+        </article>
+
+        <!-- ─── 디지털 디톡스 방법 표 (table 필수 요소) ─── -->
+        <div class="table-wrapper reveal">
+          <h3 class="table-title">🩺 증상별 디지털 디톡스 처방전</h3>
+          <p class="table-desc">혹시 아래 증상이 있다면? 맞춤 디톡스 방법을 확인해 보세요!</p>
+
+          <table class="detox-table" summary="스마트폰 과의존 증상과 그에 맞는 디지털 디톡스 방법을 정리한 표">
+            <caption>증상별 디지털 디톡스 방법</caption>
+            <colgroup>
+              <col style="width: 5%;" />
+              <col style="width: 35%;" />
+              <col style="width: 40%;" />
+              <col style="width: 20%;" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">📱 이런 증상이 있다면?</th>
+                <th scope="col">🌿 이렇게 디톡스하세요!</th>
+                <th scope="col">난이도</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>하루 4시간 이상 스마트폰을 사용한다</td>
+                <td>밖에 나가서 <strong>1시간 산책</strong>하기 (스마트폰 없이!)</td>
+                <td><span class="difficulty easy">쉬움</span></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>자기 전 스마트폰을 30분 이상 본다</td>
+                <td>취침 1시간 전부터 <strong>침실에서 스마트폰 추방</strong>하기</td>
+                <td><span class="difficulty easy">쉬움</span></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>식사 중에도 스마트폰을 놓지 못한다</td>
+                <td>식탁에서 <strong>'스마트폰 없는 식사' 규칙</strong> 만들기</td>
+                <td><span class="difficulty medium">보통</span></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>SNS를 무한 스크롤하며 시간을 보낸다</td>
+                <td>스마트폰 설정에서 <strong>앱 일일 사용시간 제한</strong> 걸기</td>
+                <td><span class="difficulty medium">보통</span></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>알림 소리에 즉시 스마트폰을 확인한다</td>
+                <td>집중 시간대 <strong>알림 전면 차단</strong>(방해금지 모드) 설정</td>
+                <td><span class="difficulty medium">보통</span></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>아침에 일어나자마자 스마트폰을 켠다</td>
+                <td>기상 후 <strong>30분은 스마트폰 없는 모닝 루틴</strong> 만들기</td>
+                <td><span class="difficulty hard">어려움</span></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>지루하면 무의식적으로 스마트폰을 집는다</td>
+                <td>스마트폰 대신 <strong>종이책, 일기, 스케치</strong>로 대체하기</td>
+                <td><span class="difficulty hard">어려움</span></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4">
+                  💡 작은 변화부터 시작하세요. 7일 챌린지로 습관을 만들 수 있습니다!
+                  <a href="challenge.html" class="table-cta-link">→ 7일 챌린지 도전하기</a>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <!-- 디톡스 효과 카드 목록 -->
+        <div class="benefit-grid reveal">
+          <h3 class="benefit-title">디지털 디톡스를 하면 달라지는 것들</h3>
+          <ul class="benefit-list" aria-label="디지털 디톡스 효과 목록">
+            <li class="benefit-card">
+              <span class="benefit-icon">🧘</span>
+              <strong>집중력 향상</strong>
+              <p>방해 없는 깊은 작업 시간이 생기고 생산성이 높아집니다.</p>
+            </li>
+            <li class="benefit-card">
+              <span class="benefit-icon">😴</span>
+              <strong>수면 질 개선</strong>
+              <p>블루라이트가 줄어 멜라토닌 분비가 정상화됩니다.</p>
+            </li>
+            <li class="benefit-card">
+              <span class="benefit-icon">💚</span>
+              <strong>감정 안정</strong>
+              <p>SNS 비교 스트레스가 줄어 자존감과 행복감이 높아집니다.</p>
+            </li>
+            <li class="benefit-card">
+              <span class="benefit-icon">🤝</span>
+              <strong>관계 개선</strong>
+              <p>오프라인 대화와 실제 경험에 집중하게 됩니다.</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- CTA 버튼 -->
+        <div class="detox-cta reveal">
+          <p>당신은 하루에 스마트폰을 몇 시간이나 사용하나요?</p>
+          <a href="index.html" class="btn btn-primary">⏱️ 스크린타임 계산해보기</a>
+          <a href="challenge.html" class="btn btn-outline">7일 디톡스 챌린지 시작</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== 푸터 ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">🌿 디지털 디톡스</p>
+        <p>스마트폰 사용 시간의 기회비용을 시각화하여<br />디지털 웰빙을 돕는 인터랙티브 웹 프로젝트입니다.</p>
+      </div>
+      <nav class="footer-links" aria-label="푸터 링크">
+        <h4>바로가기</h4>
+        <ul>
+          <li><a href="main.html">홈</a></li>
+          <li><a href="detox.html">디톡스란?</a></li>
+          <li><a href="index.html">스크린타임 계산기</a></li>
+          <li><a href="challenge.html">디톡스 챌린지</a></li>
+        </ul>
+      </nav>
+      <address class="footer-contact" style="font-style:normal;">
+        <h4>팀원 연락처</h4>
+        <p>👩‍💻 1103 이민서</p>
+        <p>📧 miiin00@gmail.com</p>
+        <p>📞 010-7777-8888</p>
+        <p>👨‍💻 1108 김시영</p>
+        <p>📧 syyy111@gmail.com</p>
+        <p>📞 010-7411-6081</p>
+        <p>📍 대소마고</p>
+      </address>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 디지털 디톡스 | 1103 이민서 &amp; 1108 김시영</p>
+      <a href="#">개인정보 처리방침</a>
+    </div>
+  </footer>
+
+  <!-- 공통 JS + 페이지 전용 JS -->
+  <script src="../js/common.js"></script>
+  <script src="../js/detox.js"></script>
+</body>
+</html>

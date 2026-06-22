@@ -1,0 +1,254 @@
+/* ============================================================
+   detox.css - 디톡스란? 페이지 전용 스타일
+   제작: 김시영, 이민서
+   ============================================================ */
+
+/* 간단한 페이드인 애니메이션 (기존의 복잡한 동작 제거) */
+.reveal { opacity: 1; 
+} 
+
+/* ===== 페이지 히어로 배너 ===== */
+.page-hero {
+  background-color: #E8F5E9; /* 정직한 연초록 배경 */
+  padding: 40px 0;
+  text-align: center;
+  border-bottom: 2px solid #CCCCCC;
+}
+
+.page-title {
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: 2.5rem;
+  color: #333333;
+  margin: 10px 0;
+}
+
+.page-desc {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.toc-link {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #fff;
+  border: 2px solid #2E8B57;
+  color: #2E8B57;
+  font-weight: bold;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.toc-link:hover {
+  background-color: #2E8B57;
+  color: white;
+}
+
+/* ===== 뱃지 색상 변형 ===== */
+.badge-red { background-color: #D9534F; }
+.badge-green { background-color: #2E8B57; }
+
+/* ===== Section 1: 스마트폰 중독 실태 ===== */
+.addiction-section {
+  padding: 50px 0;
+  background: #FFF;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* 이미지 + 텍스트 */
+.addiction-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.addiction-figure {
+  flex: 1;
+  min-width: 300px;
+}
+
+.addiction-img {
+  width: 100%;
+  border: 3px solid #CCCCCC; /* 뚜렷한 이미지 테두리 */
+  padding: 5px;
+  background: #fff;
+}
+
+.addiction-figure figcaption {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.addiction-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.addiction-text h3 {
+  font-size: 1.4rem;
+  color: #FF8C00;
+  border-bottom: 2px dashed #CCCCCC;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.symptom-list li {
+  display: flex;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-left: 5px solid #2E8B57; /* 포인트 컬러 라인 */
+}
+
+.symptom-icon {
+  font-size: 1.5rem;
+  margin-right: 15px;
+}
+
+/* 통계 하이라이트 */
+.stat-highlight-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat-highlight {
+  flex: 1;
+  min-width: 250px;
+  background-color: #333333;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  border-bottom: 5px solid #FF8C00;
+}
+
+.sh-num {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #FF8C00;
+  margin-bottom: 10px;
+}
+
+/* ===== Section 2: 디지털 디톡스 정의 ===== */
+.definition-section {
+  padding: 50px 0;
+  background: #F4F4F4;
+}
+
+.definition-card {
+  background: #fff;
+  border: 2px solid #CCCCCC;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.definition-quote {
+  background: #e9ecef;
+  border-left: 5px solid #6c757d;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.point-text {
+  background-color: yellow; /* 고전적인 형광펜 효과 */
+  font-weight: bold;
+  padding: 2px 5px;
+}
+.point-text.green {
+  background-color: #ccffcc;
+}
+
+/* ─── 표 (table) ─── */
+.table-wrapper {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #CCCCCC;
+  margin-bottom: 50px;
+  overflow-x: auto;
+}
+
+.detox-table {
+  width: 100%;
+  border-collapse: collapse; /* 정석적인 표 스타일 */
+  text-align: center;
+}
+
+.detox-table th, .detox-table td {
+  border: 1px solid #999; /* 뚜렷한 표 테두리 */
+  padding: 12px;
+}
+
+.detox-table th {
+  background-color: #2E8B57;
+  color: white;
+  font-weight: bold;
+}
+
+.detox-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.detox-table tbody tr:hover {
+  background-color: #e6f7ff;
+}
+
+/* 난이도 뱃지 */
+.difficulty {
+  padding: 5px 10px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 3px;
+}
+.difficulty.easy { background-color: #5cb85c; }
+.difficulty.medium { background-color: #f0ad4e; }
+.difficulty.hard { background-color: #d9534f; }
+
+/* ─── 디톡스 효과 카드 ─── */
+.benefit-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.benefit-card {
+  flex: 1;
+  min-width: 200px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-top: 5px solid #2E8B57;
+  padding: 20px;
+  text-align: center;
+}
+
+.benefit-card:hover {
+  background-color: #f9f9f9;
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.detox-cta {
+  text-align: center;
+  margin-top: 40px;
+  padding: 30px;
+  background: #e9ecef;
+  border: 1px solid #CCCCCC;
+}
+
+.detox-cta p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}

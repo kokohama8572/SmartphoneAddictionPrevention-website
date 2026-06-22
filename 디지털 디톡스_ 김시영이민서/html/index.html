@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>디지털 디톡스 | 스크린타임 계산기</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⏱️</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/common.css" />
+  <link rel="stylesheet" href="../css/index.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="navbar" aria-label="메인 네비게이션">
+      <div class="nav-container">
+        <a href="main.html" class="nav-logo" aria-label="홈으로 이동">
+          <span class="logo-icon">🌿</span>
+          <span class="logo-text">디지털 디톡스</span>
+        </a>
+        <ul class="nav-menu" id="navMenu">
+          <li class="nav-item"><a href="main.html" class="nav-link">홈</a></li>
+          <li class="nav-item has-dropdown">
+            <a href="detox.html" class="nav-link">디톡스란?</a>
+            <ul class="dropdown-menu">
+              <li><a href="detox.html#addiction">우리의 폰 사용 실태</a></li>
+              <li><a href="detox.html#definition">디지털 디톡스란?</a></li>
+            </ul>
+          </li>
+          <li class="nav-item has-dropdown">
+            <a href="index.html" class="nav-link active">스크린타임 계산기</a>
+            <ul class="dropdown-menu">
+              <li><a href="index.html">시간 입력하기</a></li>
+              <li><a href="result.html">결과 분석 보기</a></li>
+            </ul>
+          </li>
+          <li class="nav-item has-dropdown">
+            <a href="challenge.html" class="nav-link">디톡스 챌린지</a>
+            <ul class="dropdown-menu">
+              <li><a href="challenge.html#seven-day">7일 챌린지</a></li>
+              <li><a href="challenge.html#tips">실천 팁</a></li>
+            </ul>
+          </li>
+          <li class="nav-item has-dropdown">
+            <a href="challenge.html#stats" class="nav-link">정보 &amp; 문의</a>
+            <ul class="dropdown-menu">
+              <li><a href="challenge.html#stats">관련 통계</a></li>
+              <li><a href="challenge.html#contact">문의하기</a></li>
+            </ul>
+          </li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="calc-main">
+    <div class="calc-center">
+      <p class="calc-question">솔직하게 하루에 폰 몇 시간 보세요?<br />(찔림 주의 👀)</p>
+
+      <form class="calc-form" id="calcForm" novalidate>
+        <div class="input-group">
+          <input
+            type="number"
+            id="hoursInput"
+            class="calc-input"
+            min="0" max="24" step="0.5"
+            placeholder="예) 4.5"
+            aria-label="일일 스크린타임 시간 입력"
+            required
+          />
+          <span class="input-unit">시간 / 하루</span>
+        </div>
+
+        <label for="hoursSlider" class="sr-only">슬라이더로 조절</label>
+        <input
+          type="range"
+          id="hoursSlider"
+          class="calc-slider"
+          min="0" max="16" step="0.5" value="4"
+          aria-label="스크린타임 슬라이더"
+        />
+        <div class="slider-labels">
+          <span>0시간</span>
+          <span>8시간</span>
+          <span>16시간</span>
+        </div>
+
+        <p class="calc-preview" id="calcPreview">
+          하루 <strong id="previewHours">4</strong>시간이면…<br />
+          1년에 무려 <strong id="previewYearDays">60</strong>일이나 폰만 보고 있는 셈이에요! 😱
+        </p>
+
+        <p class="calc-error" id="calcError" role="alert" aria-live="polite"></p>
+
+        <button type="submit" class="btn btn-primary calc-submit">
+          내 팩폭 결과 보기 🚀
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">🌿 디지털 디톡스</p>
+        <p>스마트폰 사용 시간의 기회비용을 시각화하여<br />디지털 웰빙을 돕는 인터랙티브 웹 프로젝트입니다.</p>
+      </div>
+      <nav class="footer-links" aria-label="푸터 링크">
+        <h4>바로가기</h4>
+        <ul>
+          <li><a href="main.html">홈</a></li>
+          <li><a href="detox.html">디톡스란?</a></li>
+          <li><a href="index.html">스크린타임 계산기</a></li>
+          <li><a href="challenge.html">디톡스 챌린지</a></li>
+        </ul>
+      </nav>
+      <address class="footer-contact" style="font-style:normal;">
+        <h4>팀원 연락처</h4>
+        <p>👩‍💻 1103 이민서</p>
+        <p>📧 miiin00@gmail.com</p>
+        <p>📞 010-7777-8888</p>
+        <p>👨‍💻 1108 김시영</p>
+        <p>📧 syyy111@gmail.com</p>
+        <p>📞 010-3333-4444</p>
+        <p>📍 대소마고</p>
+      </address>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 디지털 디톡스 | 1103 이민서 &amp; 1108 김시영</p>
+      <a href="#">개인정보 처리방침</a>
+    </div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/index.js"></script>
+</body>
+</html>

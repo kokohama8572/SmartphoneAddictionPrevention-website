@@ -1,0 +1,304 @@
+/* challenge.css - 디톡스 챌린지 페이지 / 제작: 김시영, 이민서 */
+
+/* 복잡한 등장 애니메이션은 끄고 바로 보이게 수정 */
+.reveal { opacity: 1; } 
+
+/* 히어로 (페이지 최상단) */
+.challenge-hero { 
+  background-color: #E8F5E9; /* 부드러운 초록색 배경 */
+  padding: 60px 0; 
+  text-align: center; 
+  border-bottom: 2px solid #CCCCCC;
+}
+.page-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #333333;
+  margin: 10px 0 20px;
+}
+.page-desc  { 
+  font-size: 1.1rem; 
+  color: #666666; 
+  margin-bottom: 30px; 
+}
+
+/* 배지 변형 */
+.badge-green { background-color: #2E8B57; color: white; }
+.badge-red   { background-color: #D9534F; color: white; }
+
+/* ── 섹션 헤더 (제목 부분) ── */
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 0 15px;
+}
+
+.section-header .badge {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.section-header .section-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2E8B57;
+  margin-bottom: 15px;
+}
+
+.section-header .section-subtitle {
+  font-size: 1rem;
+  color: #666666;
+}
+
+/* ── 각 섹션 상단 여백 (공통) ── */
+.seven-day-section, .tips-section, .stats-section, .contact-section { 
+  padding: 80px 0; 
+}
+
+/* 배경색 분리 */
+.seven-day-section { background-color: #FFFFFF; }
+.tips-section { background-color: #F4F4F4; }
+.stats-section { background-color: #FFFFFF; border-top: 1px solid #CCCCCC; border-bottom: 1px solid #CCCCCC;}
+.contact-section { background-color: #F4F4F4; }
+
+/* ── 7일 챌린지 목록 ── */
+.challenge-list { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 15px; 
+  max-width: 800px; 
+  margin: 0 auto 50px; 
+}
+
+.challenge-day {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #FFFFFF;
+  border: 2px solid #CCCCCC; /* 뚜렷한 테두리 */
+  border-left: 10px solid #2E8B57; /* 왼쪽 포인트 컬러 */
+  padding: 20px;
+}
+
+.challenge-day:hover { 
+  background-color: #F9F9F9; 
+}
+
+.challenge-day.completed { 
+  border-left-color: #FF8C00; 
+  background-color: #FFF3E0; 
+}
+
+.challenge-day.completed h3 { 
+  text-decoration: line-through; 
+  color: #999999; 
+}
+
+.day-badge {
+  background-color: #333333;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  width: 70px;
+}
+.day-final { 
+  background-color: #FF8C00; 
+}
+
+.day-content {
+  flex: 1; /* 글씨 영역이 꽉 차게 */
+}
+
+.day-content h3 { 
+  font-size: 1.2rem; 
+  color: #333333; 
+  margin-bottom: 5px; 
+}
+.day-content p  { 
+  font-size: 0.9rem; 
+  color: #666666; 
+  margin-bottom: 10px; 
+}
+
+/* 난이도 뱃지 */
+.day-difficulty { 
+  font-size: 0.8rem; 
+  font-weight: bold; 
+  padding: 3px 8px; 
+  border-radius: 3px; 
+}
+.day-difficulty.easy   { background-color: #5CB85C; color: white; }
+.day-difficulty.medium { background-color: #F0AD4E; color: white; }
+.day-difficulty.hard   { background-color: #D9534F; color: white; }
+
+/* 체크 버튼 */
+.check-btn {
+  width: 40px; 
+  height: 40px;
+  border: 2px solid #CCCCCC;
+  background-color: #FFFFFF;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.check-btn:hover { 
+  background-color: #EEEEEE; 
+}
+.check-btn.checked { 
+  border-color: #FF8C00; 
+  background-color: #FF8C00; 
+  color: #FFFFFF; 
+}
+
+/* 진행 상황 막대기 */
+.progress-section { 
+  max-width: 800px; 
+  margin: 0 auto; 
+  text-align: center; 
+  border: 1px solid #CCCCCC;
+  padding: 20px;
+  background-color: #F9F9F9;
+}
+.progress-label { 
+  font-size: 1.1rem; 
+  color: #333333; 
+  margin-bottom: 10px; 
+  font-weight: bold;
+}
+.progress-label strong { color: #FF8C00; }
+
+.progress-track { 
+  height: 20px; 
+  background-color: #DDDDDD; 
+  border: 1px solid #999999;
+  margin-bottom: 10px; 
+}
+.progress-fill  { 
+  height: 100%; 
+  background-color: #FF8C00; 
+}
+.progress-msg   { font-size: 0.9rem; color: #666666; }
+
+/* ── 실천 팁 격자 모양 ── */
+.tips-grid { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 20px; 
+}
+.tip-card {
+  flex: 1;
+  min-width: 250px;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-top: 5px solid #2E8B57;
+  padding: 20px;
+  text-align: center;
+}
+.tip-card:hover { background-color: #F0F8FF; }
+
+.tip-icon { font-size: 2.5rem; display: block; margin-bottom: 10px; }
+.tip-card h3 { font-size: 1.1rem; color: #333333; margin-bottom: 10px; }
+.tip-card p  { font-size: 0.9rem; color: #666666; }
+
+/* ── 통계 박스 ── */
+.stats-cards { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 20px; 
+}
+.stats-card {
+  flex: 1;
+  min-width: 200px;
+  background-color: #333333;
+  border-bottom: 5px solid #FF8C00;
+  padding: 30px 20px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.stats-num { 
+  display: block; 
+  font-size: 2.5rem; 
+  font-weight: bold; 
+  color: #FF8C00;
+  margin-bottom: 10px; 
+}
+.stats-card p { font-size: 0.9rem; color: #DDDDDD; }
+
+/* ── 문의 폼 ── */
+.contact-form {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  border: 2px solid #CCCCCC;
+  padding: 40px;
+}
+
+.form-row { 
+  display: flex; 
+  gap: 20px; 
+  flex-wrap: wrap;
+}
+.form-row .form-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.form-group { 
+  display: flex; 
+  flex-direction: column; 
+  margin-bottom: 20px; 
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 5px;
+}
+.required { color: #D9534F; }
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #999999;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2E8B57;
+  outline: none;
+  background-color: #F0F8FF;
+}
+
+/* 체크박스 영역 */
+.checkbox-group { flex-direction: row; }
+.checkbox-label { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  font-size: 0.9rem; 
+  color: #666666; 
+}
+.checkbox-label input[type=checkbox] { width: 15px; height: 15px; }
+
+.form-error { color: #D9534F; font-weight: bold; margin-bottom: 10px; }
+.form-submit { width: 100%; padding: 15px; font-size: 1.1rem; }
+
+/* 제출 완료 후 보여줄 화면 */
+.form-success {
+  max-width: 700px; 
+  margin: 0 auto;
+  background-color: #E8F5E9;
+  border: 2px solid #2E8B57;
+  padding: 50px 30px;
+  text-align: center;
+}
+.success-icon { font-size: 3rem; display: block; margin-bottom: 15px; }
+.form-success h3 { font-size: 1.5rem; color: #2E8B57; margin-bottom: 10px; }
+.form-success p  { color: #333333; font-weight: bold; }
+
+/* 모바일 화면 대응 */

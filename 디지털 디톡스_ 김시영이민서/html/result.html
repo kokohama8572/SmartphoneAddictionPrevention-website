@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>디지털 디톡스 | 결과 보기</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>😱</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/common.css" />
+  <link rel="stylesheet" href="../css/result.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar" aria-label="메인 네비게이션">
+      <div class="nav-container">
+        <a href="main.html" class="nav-logo" aria-label="홈으로 이동">
+          <span class="logo-icon">🌿</span>
+          <span class="logo-text">디지털 디톡스</span>
+        </a>
+        <ul class="nav-menu" id="navMenu">
+          <li class="nav-item"><a href="main.html" class="nav-link">홈</a></li>
+          <li class="nav-item has-dropdown">
+            <a href="detox.html" class="nav-link">디톡스란?</a>
+            <ul class="dropdown-menu">
+              <li><a href="detox.html#addiction">우리의 폰 사용 실태</a></li>
+              <li><a href="detox.html#definition">디지털 디톡스란?</a></li>
+            </ul>
+          </li>
+          <li class="nav-item has-dropdown">
+            <a href="index.html" class="nav-link active">스크린타임 계산기</a>
+            <ul class="dropdown-menu">
+              <li><a href="index.html">시간 입력하기</a></li>
+              <li><a href="result.html">결과 분석 보기</a></li>
+            </ul>
+          </li>
+          <li class="nav-item has-dropdown">
+            <a href="challenge.html" class="nav-link">디톡스 챌린지</a>
+            <ul class="dropdown-menu">
+              <li><a href="challenge.html#seven-day">7일 챌린지</a></li>
+              <li><a href="challenge.html#tips">실천 팁</a></li>
+            </ul>
+          </li>
+          <li class="nav-item has-dropdown">
+            <a href="challenge.html#stats" class="nav-link">정보 &amp; 문의</a>
+            <ul class="dropdown-menu">
+              <li><a href="challenge.html#stats">관련 통계</a></li>
+              <li><a href="challenge.html#contact">문의하기</a></li>
+            </ul>
+          </li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="result-intro">
+      <div class="container">
+        <p class="result-label">우리가 매일 폰에 바치는 시간 📱</p>
+        <h1 class="result-hours"><span id="displayHours">4</span>시간</h1>
+        <p class="result-sub">이 시간이 한 달, 1년 쌓이면 어떻게 될까요? 밑으로 내려서 팩폭 맞아보세요 👇</p>
+      </div>
+    </section>
+
+    <section class="result-section week-section" id="week">
+      <div class="container result-inner">
+        <div class="result-scale-badge">🗓️ 1주일이면</div>
+        <h2 class="result-scale-title"><span id="weekHours">28</span>시간</h2>
+        <p class="result-fun-text" id="weekText">
+          대구에서 서울까지 자전거로 왕복하고<br />
+          국밥까지 한 그릇 여유롭게 때릴 수 있는 시간이에요 ㅋㅋㅋ
+        </p>
+        <div class="result-visual week-visual" aria-hidden="true">
+          <div class="bike-track">
+            <div class="bike-icon" id="bikeIcon">🚴</div>
+            <div class="city-label start">📍 대구</div>
+            <div class="city-label end">📍 서울</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="result-section month-section" id="month">
+      <div class="container result-inner">
+        <div class="result-scale-badge accent">💰 1달이면</div>
+        <h2 class="result-scale-title"><span id="monthHours">120</span>시간</h2>
+        <p class="result-fun-text" id="monthText">
+          올해 최저시급(9,860원)으로 이 시간 동안 알바를 했다면 무려...<br />
+          <strong class="counter-amount"><span id="monthWage">0</span>원</strong> 벌었음! (매달 에어팟 맥스 하나씩 샀다 진짜 💸)
+        </p>
+        <div class="result-visual month-visual" aria-hidden="true">
+          <div class="coin-pile">💰💰💰💰💰</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="result-section year-section" id="year">
+      <div class="container result-inner">
+        <div class="result-scale-badge green">📚 1년이면</div>
+        <h2 class="result-scale-title"><span id="yearHours">1460</span>시간</h2>
+        <p class="result-fun-text" id="yearText">
+          쇼츠 볼 시간에 책을 읽었다면 무려 <strong id="yearBooks">243</strong>권 완독 가능!<br />
+          이 정도면 전교 1등도 가능했을 시간이죠...<br />
+          <span class="small-note">↓ 폰 대신 읽었어야 할 책들이 떨어집니다</span>
+        </p>
+        <div class="books-canvas-wrapper">
+          <canvas id="booksCanvas" width="600" height="300" aria-label="책 낙하 애니메이션"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="result-section decade-section" id="decade">
+      <div class="container result-inner">
+        <div class="result-scale-badge purple">🌍 10년이면</div>
+        <h2 class="result-scale-title"><span id="decadeHours">14600</span>시간</h2>
+        <p class="result-fun-text" id="decadeText">
+          이대로 10년이 지나면 걸어서 지구 반 바퀴를 돌거나,<br />
+          아폴로 11호를 타고 <strong>달까지 무려 100번이나 왕복</strong>할 수 있는 미친 시간 🚀
+        </p>
+        <div class="result-visual decade-visual" aria-hidden="true">
+          <div class="earth-moon">
+            <span class="earth-icon">🌍</span>
+            <span class="orbit-line"></span>
+            <span class="moon-icon" id="moonIcon">🌕</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="result-cta">
+      <div class="container">
+        <h2>이대로 가단 진짜 폰의 노예가 됩니다 😱</h2>
+        <p>거창하게 말고 딱 7일만! 잃어버린 내 시간을 찾아볼까요?</p>
+        <div class="cta-buttons">
+          <a href="challenge.html" class="btn btn-primary">🌿 7일 챌린지 시작하기</a>
+          <a href="index.html"     class="btn btn-outline">↩ 다시 계산하기</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">🌿 디지털 디톡스</p>
+        <p>스마트폰 사용 시간의 기회비용을 시각화하여<br />디지털 웰빙을 돕는 인터랙티브 웹 프로젝트입니다.</p>
+      </div>
+      <nav class="footer-links" aria-label="푸터 링크">
+        <h4>바로가기</h4>
+        <ul>
+          <li><a href="main.html">홈</a></li>
+          <li><a href="detox.html">디톡스란?</a></li>
+          <li><a href="index.html">스크린타임 계산기</a></li>
+          <li><a href="challenge.html">디톡스 챌린지</a></li>
+        </ul>
+      </nav>
+      <address class="footer-contact" style="font-style:normal;">
+        <h4>팀원 연락처</h4>
+        <p>👩‍💻 1103 이민서</p>
+        <p>📧 miiin00@gmail.com</p>
+        <p>📞 010-7777-8888</p>
+        <p>👨‍💻 1108 김시영</p>
+        <p>📧 syyy111@gmail.com</p>
+        <p>📞 010-3333-4444</p>
+        <p>📍 대소마고</p>
+      </address>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 디지털 디톡스 | 1103 이민서 &amp; 1108 김시영</p>
+      <a href="#">개인정보 처리방침</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/result.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+/* ============================================================
+   loading.css - 로딩 페이지 스타일 (애니메이션 중심)
+   제작: 김시영, 이민서
+   ============================================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body.loading-body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #0F172A;    /* 어두운 배경 */
+  color: #FFFFFF;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.loading-main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 40px;
+}
+
+/* ─── 톱니바퀴 ─── */
+.gears-wrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+}
+
+.gear {
+  position: absolute;
+  font-size: 5rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 12px rgba(91,79,207,.8));
+}
+
+/* 큰 톱니바퀴: 시계방향 회전 */
+.gear-big {
+  top: 0; left: 0;
+  animation: rotateCW 2s linear infinite;
+  color: #5B4FCF;
+}
+
+/* 작은 톱니바퀴: 반시계방향 회전 */
+.gear-small {
+  bottom: 0; right: 0;
+  font-size: 3rem;
+  animation: rotateCCW 1.5s linear infinite;
+  color: #059669;
+}
+
+@keyframes rotateCW  { from { transform: rotate(0deg);   } to { transform: rotate(360deg);  } }
+@keyframes rotateCCW { from { transform: rotate(0deg);   } to { transform: rotate(-360deg); } }
+
+/* ─── 글리치 텍스트 효과 ─── */
+.glitch-text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #E2E8F0;
+  position: relative;
+  animation: glitchAnim 3s step-end infinite;
+  text-align: center;
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+/* 글리치: ::before (빨간 채널) */
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+}
+
+.glitch-text::before {
+  color: #FF6B6B;
+  animation: glitchBefore 3s step-end infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+}
+
+.glitch-text::after {
+  color: #6BCB77;
+  animation: glitchAfter 3s step-end infinite;
+  clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchAnim {
+  0%, 85%, 100% { transform: translate(0); }
+  86%  { transform: translate(-2px, 1px); }
+  88%  { transform: translate(2px, -1px); }
+  90%  { transform: translate(-1px, 2px); }
+}
+
+@keyframes glitchBefore {
+  0%, 85%, 100% { transform: translate(0); opacity: 0; }
+  86%  { transform: translate(-3px, 0); opacity: 0.8; }
+  90%  { transform: translate(3px, 0);  opacity: 0.6; }
+}
+
+@keyframes glitchAfter {
+  0%, 85%, 100% { transform: translate(0); opacity: 0; }
+  87%  { transform: translate(3px, 1px); opacity: 0.7; }
+  91%  { transform: translate(-3px, -1px); opacity: 0.5; }
+}
+
+/* ─── 진행 바 ─── */
+.progress-bar-wrapper {
+  width: 320px;
+  max-width: 90vw;
+  height: 6px;
+  background: #1E293B;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #5B4FCF, #059669);
+  border-radius: 3px;
+  transition: width 0.1s linear;
+}
+
+/* 힌트 텍스트 */
+.loading-hint {
+  font-size: 0.85rem;
+  color: #64748B;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}

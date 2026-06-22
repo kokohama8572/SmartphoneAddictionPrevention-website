@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+  loading.html - 로딩 (긴장감 조성) 페이지
+  제작: 김시영, 이민서
+  설명: 톱니바퀴 CSS 애니메이션 + 글리치 텍스트 → 2.8초 후 result.html로 자동 이동
+-->
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>계산 중...</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/loading.css" />
+</head>
+<body class="loading-body">
+
+  <main class="loading-main">
+    <!-- 톱니바퀴 애니메이션 -->
+    <div class="gears-wrapper" aria-hidden="true">
+      <div class="gear gear-big">⚙️</div>
+      <div class="gear gear-small">⚙️</div>
+    </div>
+
+    <!-- 글리치 텍스트 -->
+    <p class="glitch-text" data-text="당신의 잃어버린 시간을 계산 중입니다...">
+      당신의 잃어버린 시간을 계산 중입니다...
+    </p>
+
+    <!-- 진행 바 -->
+    <div class="progress-bar-wrapper" role="progressbar" aria-label="계산 진행 중">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- 카운트다운 -->
+    <p class="loading-hint" id="loadingHint">잠시만 기다려 주세요...</p>
+  </main>
+
+  <script src="../js/loading.js"></script>
+</body>
+</html>

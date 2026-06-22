@@ -1,0 +1,244 @@
+/* ============================================================
+   common.css - 디지털 디톡스 프로젝트 공통 스타일
+   제작: 김시영, 이민서
+   ============================================================ */
+
+/* ---------- 리셋 & 기본 ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #333333;
+  background: #F4F4F4;
+  line-height: 1.6;
+  padding-top: 70px; /* 헤더 높이만큼 띄움 */
+  min-height: 100vh;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---------- 헤더 ---------- */
+/* 다른 섹션 헤더랑 안 겹치게 body > header 로 고정 */
+body > header {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  height: 70px;
+  background: #FFFFFF;
+  border-bottom: 2px solid #2E8B57; /* 뚜렷한 초록색 선 */
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ---------- 로고 ---------- */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: 1.5rem;
+  color: #2E8B57;
+}
+
+/* ---------- 메뉴 리스트 ---------- */
+.nav-menu {
+  display: flex;
+  height: 100%;
+}
+
+.nav-item {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  padding: 10px 20px;
+  font-weight: bold;
+  color: #333333;
+  border-radius: 5px;
+}
+
+.nav-link:hover, .nav-link.active {
+  background-color: #2E8B57;
+  color: #fff;
+}
+
+/* ---------- 드롭다운 메뉴 ---------- */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 180px;
+  background: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-top: none;
+  display: none; 
+  z-index: 999;
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 12px 15px;
+  font-size: 0.9rem;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f0f8ff;
+  color: #2E8B57;
+  font-weight: bold;
+}
+
+/* ---------- 모바일 버튼 ---------- */
+.nav-toggle {
+  display: none;
+  background: #2E8B57;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* ---------- 푸터 ---------- */
+footer {
+  background: #333333;
+  color: #FFFFFF;
+  padding: 30px 20px;
+  margin-top: 50px;
+  border-top: 5px solid #2E8B57;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-brand .footer-logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2E8B57;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-links h4, .footer-contact h4 {
+  margin-bottom: 10px;
+  color: #FF8C00;
+}
+
+.footer-links ul li { margin-bottom: 5px; }
+.footer-links ul li a:hover { text-decoration: underline; }
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #555;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* ---------- 공통 유틸리티 ---------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: #2E8B57;
+  margin-bottom: 10px;
+  border-left: 5px solid #2E8B57;
+  padding-left: 10px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #666666;
+  margin-bottom: 30px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px solid #2E8B57;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #2E8B57;
+  color: #FFF;
+}
+.btn-primary:hover {
+  background: #246B43;
+}
+
+.btn-outline {
+  background: #FFF;
+  color: #2E8B57;
+}
+.btn-outline:hover {
+  background: #2E8B57;
+  color: #FFF;
+}
+
+/* ---------- 플래티콘 아이콘 공통 정렬 ---------- */
+i.fi {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}

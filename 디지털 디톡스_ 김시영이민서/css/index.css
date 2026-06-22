@@ -1,0 +1,173 @@
+/* ============================================================
+   index.css - 스크린타임 계산기 입력 페이지 스타일
+   제작: 김시영, 이민서
+   ============================================================ */
+
+/* 페이지 전체 배경: 밋밋하지 않게 연한 초록색 깔기 */
+body { background-color: #E8F5E9; }
+
+.calc-main {
+  /* 헤더(70px)랑 푸터 공간 제외하고 대충 화면 중앙에 오도록 */
+  min-height: calc(100vh - 190px); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.calc-center {
+  width: 100%;
+  max-width: 500px;
+  background-color: #FFFFFF;
+  border: 2px solid #CCCCCC;
+  border-top: 10px solid #2E8B57; /* 포인트 라인 */
+  padding: 40px;
+  text-align: center;
+}
+
+/* 큰 질문 텍스트 */
+.calc-question {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333333;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+/* 입력 영역 폼 */
+.calc-form { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 25px; 
+}
+
+/* 숫자 입력칸 감싸는 박스 */
+.input-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #F9F9F9;
+  border: 2px solid #CCCCCC;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.input-group:focus-within {
+  border-color: #2E8B57;
+  background-color: #F0F8FF;
+}
+
+/* 실제 숫자 적는 부분 */
+.calc-input {
+  width: 120px;
+  border: none;
+  border-bottom: 3px solid #2E8B57; /* 밋밋해서 밑줄 하나 그어줌 */
+  outline: none;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2E8B57;
+  background: transparent;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.calc-input::placeholder { color: #BBBBBB; }
+
+/* 숫자 입력 화살표(위아래 버튼) 안 보이게 숨기기 */
+.calc-input::-webkit-inner-spin-button,
+.calc-input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.calc-input[type=number] { -moz-appearance: textfield; }
+
+/* '시간 / 하루' 글씨 */
+.input-unit {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #666666;
+}
+
+/* 슬라이더(막대기) 디자인 */
+.calc-slider {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 10px;
+  background-color: #DDDDDD;
+  border: 1px solid #999999;
+  outline: none;
+  cursor: pointer;
+}
+
+/* 슬라이더 동그라미 손잡이 */
+.calc-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background-color: #FF8C00; /* 주황색 포인트 */
+  border: 2px solid #333333;
+  cursor: pointer;
+}
+.calc-slider::-moz-range-thumb {
+  width: 25px; 
+  height: 25px; 
+  background-color: #FF8C00; 
+  border: 2px solid #333333;
+  cursor: pointer;
+}
+
+/* 슬라이더 밑에 0시간, 8시간, 16시간 텍스트 */
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.8rem;
+  color: #666666;
+  margin-top: -15px; /* 위로 살짝 당김 */
+  font-weight: bold;
+}
+
+/* 미리보기 텍스트 (몇일 낭비했나 보여주는 박스) */
+.calc-preview {
+  font-size: 1rem;
+  color: #333333;
+  background-color: #FFF3E0; /* 연한 주황색 배경 */
+  border: 2px solid #FF8C00;
+  padding: 20px;
+  line-height: 1.6;
+  width: 100%;
+  font-weight: bold;
+}
+
+.calc-preview strong { color: #D9534F; font-size: 1.2rem; }
+
+/* 오류 메시지 (숫자 안 적고 넘어가려 할 때) */
+.calc-error {
+  font-size: 0.9rem;
+  color: #D9534F;
+  min-height: 20px;
+  font-weight: bold;
+}
+
+/* 제출 버튼 */
+.calc-submit {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+}
+
+/* 스크린리더 전용 텍스트 숨기기 */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* 모바일 화면 대응 */
+@media (max-width: 480px) {
+  .calc-center { padding: 30px 20px; }
+  .calc-question { font-size: 1.5rem; }
+  .calc-input    { font-size: 2.2rem; width: 90px; }
+}
